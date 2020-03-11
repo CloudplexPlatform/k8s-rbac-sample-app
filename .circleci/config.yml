@@ -5,8 +5,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: rbac fet information Build and push Docker image
+          name: rbac sample app  Build and push Docker image
           command: |
-            sudo docker build -t cloudplexng/dockerfet:${CIRCLE_BUILD_NUM} .
+            sudo docker build -t cloudplexng/k8s-rbac:${CIRCLE_BUILD_NUM} .
             sudo docker login -u "$username" -p "$password"
-            sudo docker push cloudplexng/dockerfet:${CIRCLE_BUILD_NUM}
+            sudo docker push cloudplexng/k8s-rbac:${CIRCLE_BUILD_NUM}
